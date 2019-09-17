@@ -82,8 +82,39 @@ export const constantRoutes = [
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
       }
     ]
-  },
-  {
+  }, {
+    path: '/retrieval',
+    component: Layout,
+    name: 'Retrieval',
+    meta: {
+      title: 'Retrieval',
+      icon: 'lock'
+    },
+    children: [
+      {
+        path: 'image',
+        component: () => import('@/views/retrieval/image'),
+        name: 'Image',
+        meta: { title: 'RetByImage', icon: 'clipboard' }
+      }, {
+        path: 'spectral',
+        component: () => import('@/views/retrieval/spectral'),
+        name: 'Spectral',
+        meta: { title: 'RetBySpectral', icon: 'clipboard' }
+      }
+    ]
+  }, {
+    path: '/upload',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/upload/index'),
+        name: 'Upload',
+        meta: { title: 'Upload', icon: 'clipboard' }
+      }
+    ]
+  }, {
     path: '/documentation',
     component: Layout,
     children: [
@@ -91,7 +122,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/documentation/index'),
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: 'Documentation', icon: 'documentation' }
       }
     ]
   },

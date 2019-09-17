@@ -1,6 +1,7 @@
 import request from '@/utils/request'
 
 export function login(data) {
+  console.log(data)
   return request({
     url: '/user/login',
     method: 'post',
@@ -8,11 +9,12 @@ export function login(data) {
   })
 }
 
-export function getInfo(token) {
+export function getInfo(data) {
+  // console.log(token)
   return request({
     url: '/user/info',
-    method: 'get',
-    params: { token }
+    method: 'post',
+    data
   })
 }
 
